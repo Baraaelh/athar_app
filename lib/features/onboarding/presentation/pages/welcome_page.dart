@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -33,18 +34,14 @@ class WelcomePage extends StatelessWidget {
                 AccountTypeCard(
                   title: AppStrings.donorTitle,
                   subtitle: AppStrings.donorSubtitle,
-                  icon: Icons.favorite_rounded,
-                  iconColor: AppColors.primary,
-                  iconBackground: AppColors.primaryLight,
+                  iconAsset: AppAssets.donorIcon,
                   onTap: () => Navigator.pushNamed(context, Routes.registerDonor),
                 ),
                 const SizedBox(height: 24),
                 AccountTypeCard(
                   title: AppStrings.organizationTitle,
                   subtitle: AppStrings.organizationSubtitle,
-                  icon: Icons.apartment_rounded,
-                  iconColor: AppColors.organizationIcon,
-                  iconBackground: AppColors.organizationIconBg,
+                  iconAsset: AppAssets.organizationIcon,
                   onTap: () => _showComingSoon(context),
                 ),
                 const Spacer(flex: 4),

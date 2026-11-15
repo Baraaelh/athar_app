@@ -8,17 +8,13 @@ class AccountTypeCard extends StatelessWidget {
     super.key,
     required this.title,
     required this.subtitle,
-    required this.icon,
-    required this.iconColor,
-    required this.iconBackground,
+    required this.iconAsset,
     required this.onTap,
   });
 
   final String title;
   final String subtitle;
-  final IconData icon;
-  final Color iconColor;
-  final Color iconBackground;
+  final String iconAsset;
   final VoidCallback onTap;
 
   @override
@@ -37,15 +33,7 @@ class AccountTypeCard extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: iconBackground,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(icon, color: iconColor, size: 30),
-              ),
+              Image.asset(iconAsset, width: 49, height: 53),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(

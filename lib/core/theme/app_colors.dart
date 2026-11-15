@@ -43,10 +43,6 @@ abstract final class AppColors {
   static const Color patientsIconBg = Color(0xFFFECACA);
   static const Color patientsIcon = Color(0xFFEF4444);
 
-  // Organization card
-  static const Color organizationIconBg = Color(0xFFDBEAFE);
-  static const Color organizationIcon = Color(0xFF3B82F6);
-
   // Gradients
   static const LinearGradient logoGradient = LinearGradient(
     begin: Alignment.topCenter,
@@ -70,6 +66,6 @@ abstract final class AppColors {
   static const LinearGradient sponsoredOverlay = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [Color(0x99000000), Color(0x66000000)],
+    colors: [Color(0x33000000), Color(0x1A000000)],
   );
 }

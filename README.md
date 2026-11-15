@@ -31,18 +31,17 @@ lib/
 - **Data** تطبق عقود الـ Domain (حالياً بيانات وهمية – استبدل `datasources` بـ API حقيقي فقط).
 - **Presentation** تتواصل مع الـ Domain عبر الـ UseCases داخل الـ Cubits.
 
-## الصور
-ضع الصور داخل `assets/images/` بالأسماء الموجودة في `lib/core/constants/app_assets.dart`:
+## الصور والأيقونات
+كل المسارات معرّفة في `lib/core/constants/app_assets.dart`:
 
 | الملف | الاستخدام |
 |---|---|
-| `sprout.png` | صورة النبتة في الرئيسية |
-| `orphan_baby.png` | كفالة يتيم |
-| `university_student.png` | كفالة طالب جامعي |
-| `family_case.png` | كفالة أسرة |
-| `patient_case.png` | علاج مريض |
-
-إلى حين إضافتها يظهر placeholder تلقائياً.
+| `assets/images/logo.png` | شعار أثر في هيدر الرئيسية |
+| `assets/images/sprout.png` | النبتة في الرئيسية |
+| `assets/images/orphan_baby.png` | كفالة يتيم |
+| `assets/images/university_student.png` | كفالة طالب جامعي |
+| `assets/icons/donor.png` | أيقونة متبرع / متابع |
+| `assets/icons/organization.png` | أيقونة جمعية / منظمة |
 
 ## التشغيل
 ```bash

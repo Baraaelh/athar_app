@@ -27,8 +27,7 @@ class HomeHero extends StatelessWidget {
           width: 76,
           height: 76,
           decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.primaryLight),
-          clipBehavior: Clip.antiAlias,
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(14),
           child: const AppImage(
             AppAssets.sprout,
             fit: BoxFit.contain,

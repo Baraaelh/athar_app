@@ -30,5 +30,4 @@ abstract final class AppTextStyles {
   static TextStyle get label => _base(size: 14, weight: FontWeight.w500, color: AppColors.primary);
   static TextStyle get button => _base(size: 15, weight: FontWeight.w700, color: AppColors.white);
   static TextStyle get link => _base(size: 14, weight: FontWeight.w700, color: AppColors.primary);
-  static TextStyle get logo => _base(size: 26, weight: FontWeight.w800, color: AppColors.primary);
 }
