@@ -27,7 +27,8 @@ class CategoryCard extends StatelessWidget {
             Container(
               width: 36,
               height: 36,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: style.iconBackground),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: style.iconBackground),
               child: Icon(style.icon, color: style.iconColor, size: 22),
             ),
             const SizedBox(height: 8),
@@ -36,7 +37,8 @@ class CategoryCard extends StatelessWidget {
               child: Text(
                 category.title,
                 maxLines: 1,
-                style: AppTextStyles.sectionTitle.copyWith(fontSize: 12, fontWeight: FontWeight.w500),
+                style: AppTextStyles.sectionTitle
+                    .copyWith(fontSize: 12, fontWeight: FontWeight.w500),
               ),
             ),
             const SizedBox(height: 6),

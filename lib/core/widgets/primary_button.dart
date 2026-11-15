@@ -33,12 +33,14 @@ class PrimaryButton extends StatelessWidget {
           disabledBackgroundColor: AppColors.primary.withValues(alpha: 0.6),
           foregroundColor: AppColors.white,
           elevation: 0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radius)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius)),
         ),
         child: isLoading
             ? const SizedBox.square(
                 dimension: 22,
-                child: CircularProgressIndicator(strokeWidth: 2.5, color: AppColors.white),
+                child: CircularProgressIndicator(
+                    strokeWidth: 2.5, color: AppColors.white),
               )
             : Text(label, style: textStyle ?? AppTextStyles.button),
       ),

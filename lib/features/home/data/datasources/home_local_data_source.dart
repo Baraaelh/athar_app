@@ -10,17 +10,34 @@ abstract interface class HomeLocalDataSource {
 /// Mock data source. Swap with a remote one when the API is available.
 class HomeLocalDataSourceImpl implements HomeLocalDataSource {
   static const _categories = [
-    {'type': 'orphans', 'title': 'أيتام', 'description': 'أطفال ينتظرون كفالتك'},
-    {'type': 'students', 'title': 'طلاب جامعة', 'description': 'ادعم تعليمهم لمستقبل أفضل'},
-    {'type': 'families', 'title': 'أسر محتاجة', 'description': 'ساعد اسرة تعيش ظروف صعبة'},
-    {'type': 'patients', 'title': 'مرضى', 'description': 'كن عونا لهم في رحلة العلاج'},
+    {
+      'type': 'orphans',
+      'title': 'أيتام',
+      'description': 'أطفال ينتظرون كفالتك'
+    },
+    {
+      'type': 'students',
+      'title': 'طلاب جامعة',
+      'description': 'ادعم تعليمهم لمستقبل أفضل'
+    },
+    {
+      'type': 'families',
+      'title': 'أسر محتاجة',
+      'description': 'ساعد اسرة تعيش ظروف صعبة'
+    },
+    {
+      'type': 'patients',
+      'title': 'مرضى',
+      'description': 'كن عونا لهم في رحلة العلاج'
+    },
   ];
 
   static const _sponsorships = [
     {
       'id': '1',
       'title': 'كفالة يتيم في قطاع غزة',
-      'description': 'طفل يتيم فقد والده ويحتاج إلى كفالة شهرية تؤمن احتياجاته الأساسية',
+      'description':
+          'طفل يتيم فقد والده ويحتاج إلى كفالة شهرية تؤمن احتياجاته الأساسية',
       'organization': 'rohamaa',
       'image': AppAssets.orphanBaby,
       'monthly_amount': 500,
@@ -31,7 +48,8 @@ class HomeLocalDataSourceImpl implements HomeLocalDataSource {
     {
       'id': '2',
       'title': 'كفالة طالب جامعي',
-      'description': 'طالب جامعي يسعى لاكمال تعليمه العالي لكنه يواجه صعوبات مادية',
+      'description':
+          'طالب جامعي يسعى لاكمال تعليمه العالي لكنه يواجه صعوبات مادية',
       'organization': 'الامل',
       'image': AppAssets.universityStudent,
       'monthly_amount': 500,
@@ -42,7 +60,8 @@ class HomeLocalDataSourceImpl implements HomeLocalDataSource {
     {
       'id': '3',
       'title': 'كفالة يتيم في الضفة',
-      'description': 'طفلة يتيمة تحتاج إلى كفالة شهرية لتأمين التعليم والرعاية الصحية',
+      'description':
+          'طفلة يتيمة تحتاج إلى كفالة شهرية لتأمين التعليم والرعاية الصحية',
       'organization': 'rohamaa',
       'image': AppAssets.orphanBaby,
       'monthly_amount': 500,

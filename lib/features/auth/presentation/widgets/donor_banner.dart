@@ -24,19 +24,24 @@ class DonorBanner extends StatelessWidget {
               shape: BoxShape.circle,
               color: AppColors.primary.withValues(alpha: 0.15),
             ),
-            child: const Icon(Icons.favorite_rounded, color: AppColors.primary, size: 28),
+            child: const Icon(Icons.favorite_rounded,
+                color: AppColors.primary, size: 28),
           ),
           const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                AppStrings.generousDonor,
-                style: AppTextStyles.label.copyWith(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(height: 6),
-              Text(AppStrings.contributeToCommunity, style: AppTextStyles.body),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  AppStrings.generousDonor,
+                  style: AppTextStyles.label
+                      .copyWith(fontSize: 16, fontWeight: FontWeight.w600),
+                ),
+                const SizedBox(height: 6),
+                Text(AppStrings.contributeToCommunity,
+                    style: AppTextStyles.body),
+              ],
+            ),
           ),
         ],
       ),

@@ -26,6 +26,15 @@ class SponsorshipEntity extends Equatable {
   final bool isSponsored;
 
   @override
-  List<Object?> get props =>
-      [id, title, description, organization, image, monthlyAmount, category, categoryLabel, isSponsored];
+  List<Object?> get props => [
+        id,
+        title,
+        description,
+        organization,
+        image,
+        monthlyAmount,
+        category,
+        categoryLabel,
+        isSponsored
+      ];
 }

@@ -9,8 +9,11 @@ import '../../domain/entities/sponsorship_entity.dart';
 class SponsorshipCard extends StatelessWidget {
   const SponsorshipCard({super.key, required this.sponsorship, this.onSponsor});
 
-  static const double width = 200;
   static const double imageHeight = 236;
+
+  /// ~49% of the screen width, clamped to keep the design proportions.
+  static double widthOf(BuildContext context) =>
+      (MediaQuery.sizeOf(context).width * 0.49).clamp(180.0, 240.0);
 
   final SponsorshipEntity sponsorship;
   final VoidCallback? onSponsor;
@@ -18,12 +21,15 @@ class SponsorshipCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
+      width: widthOf(context),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.06), blurRadius: 16, offset: const Offset(0, 4)),
+          BoxShadow(
+              color: Colors.black.withValues(alpha: 0.06),
+              blurRadius: 16,
+              offset: const Offset(0, 4)),
         ],
       ),
       clipBehavior: Clip.antiAlias,
@@ -41,7 +47,8 @@ class SponsorshipCard extends StatelessWidget {
                     sponsorship.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.cardTitle.copyWith(fontWeight: FontWeight.w500),
+                    style: AppTextStyles.cardTitle
+                        .copyWith(fontWeight: FontWeight.w500),
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -53,15 +60,19 @@ class SponsorshipCard extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: [
-                      const Icon(Icons.home_outlined, size: 14, color: AppColors.textSecondary),
+                      const Icon(Icons.home_outlined,
+                          size: 14, color: AppColors.textSecondary),
                       const SizedBox(width: 4),
                       Text(sponsorship.organization, style: AppTextStyles.tiny),
                     ],
                   ),
                   const SizedBox(height: 6),
                   _PricePill(amount: sponsorship.monthlyAmount),
+                  const SizedBox(height: 16),
                   const Spacer(),
-                  _SponsorButton(isSponsored: sponsorship.isSponsored, onPressed: onSponsor),
+                  _SponsorButton(
+                      isSponsored: sponsorship.isSponsored,
+                      onPressed: onSponsor),
                 ],
               ),
             ),
@@ -96,7 +107,8 @@ class _CardImage extends StatelessWidget {
               top: 10,
               start: 10,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 decoration: BoxDecoration(
                   color: AppColors.primary,
                   borderRadius: BorderRadius.circular(20),
@@ -123,7 +135,8 @@ class _SponsoredLabel extends StatelessWidget {
       children: [
         Text(
           AppStrings.sponsored,
-          style: AppTextStyles.title.copyWith(color: AppColors.white, fontSize: 22),
+          style: AppTextStyles.title
+              .copyWith(color: AppColors.white, fontSize: 22),
         ),
         const SizedBox(width: 6),
         const Icon(Icons.check_rounded, color: AppColors.white, size: 34),
@@ -148,7 +161,8 @@ class _PricePill extends StatelessWidget {
       ),
       child: Text(
         '$amount ${AppStrings.perMonth}',
-        style: AppTextStyles.tiny.copyWith(color: AppColors.primaryDark, fontWeight: FontWeight.w500),
+        style: AppTextStyles.tiny.copyWith(
+            color: AppColors.primaryDark, fontWeight: FontWeight.w500),
       ),
     );
   }

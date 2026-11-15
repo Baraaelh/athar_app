@@ -12,7 +12,8 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.headerBackground,
-      padding: EdgeInsets.fromLTRB(16, MediaQuery.paddingOf(context).top + 12, 16, 20),
+      padding: EdgeInsets.fromLTRB(
+          16, MediaQuery.paddingOf(context).top + 12, 16, 20),
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -21,7 +22,8 @@ class HomeHeader extends StatelessWidget {
             alignment: AlignmentDirectional.centerEnd,
             child: IconButton(
               onPressed: onNotificationsTap,
-              icon: const Icon(Icons.notifications_none_rounded, size: 30, color: AppColors.textSecondary),
+              icon: const Icon(Icons.notifications_none_rounded,
+                  size: 30, color: AppColors.textSecondary),
             ),
           ),
         ],

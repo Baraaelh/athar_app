@@ -7,5 +7,6 @@ class GetSponsorshipsUseCase {
 
   final HomeRepository _repository;
 
-  Future<Result<List<SponsorshipEntity>>> call() => _repository.getSponsorships();
+  Future<Result<List<SponsorshipEntity>>> call() =>
+      _repository.getSponsorships();
 }

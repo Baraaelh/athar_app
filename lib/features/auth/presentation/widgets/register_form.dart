@@ -106,7 +106,8 @@ class _RegisterFormState extends State<RegisterForm> {
               textInputAction: TextInputAction.done,
               obscureText: state.isConfirmPasswordHidden,
               onToggleObscure: cubit.toggleConfirmPasswordVisibility,
-              validator: (v) => Validators.confirmPassword(v, _passwordController.text),
+              validator: (v) =>
+                  Validators.confirmPassword(v, _passwordController.text),
             ),
             const SizedBox(height: 34),
             PrimaryButton(

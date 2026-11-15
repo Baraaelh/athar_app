@@ -18,6 +18,9 @@ abstract final class AppColors {
   static const Color inputBorder = Color(0xFFD1D5DB);
   static const Color scaffold = Color(0xFFF8FAFC);
   static const Color headerBackground = Color(0xFFF5F7F6);
+  static const Color homeBackground = Color(0xFFF8FAF7);
+  static const Color searchFill = Color(0xFFF9FAFC);
+  static const Color navInactive = Color(0xFF757575);
   static const Color divider = Color(0xFFCBD5E1);
   static const Color disabled = Color(0xFFE5E7EB);
   static const Color disabledText = Color(0xFF6B7280);

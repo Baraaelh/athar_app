@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../home/presentation/pages/home_page.dart';
 import '../cubit/main_shell_cubit.dart';
@@ -21,6 +22,7 @@ class MainShellPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MainShellCubit, int>(
       builder: (context, index) => Scaffold(
+        backgroundColor: AppColors.homeBackground,
         body: IndexedStack(index: index, children: _tabs),
         bottomNavigationBar: AppBottomNavBar(
           currentIndex: index,

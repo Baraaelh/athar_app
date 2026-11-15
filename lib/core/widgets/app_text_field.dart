@@ -47,7 +47,8 @@ class AppTextField extends StatelessWidget {
         hintStyle: AppTextStyles.bodyDark,
         filled: true,
         fillColor: AppColors.white,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         prefixIcon: Padding(
           padding: const EdgeInsetsDirectional.only(start: 16, end: 6),
           child: Icon(prefixIcon, color: AppColors.textHint, size: 22),
@@ -58,7 +59,9 @@ class AppTextField extends StatelessWidget {
             : IconButton(
                 onPressed: onToggleObscure,
                 icon: Icon(
-                  obscureText ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                  obscureText
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
                   color: AppColors.textSecondary,
                 ),
               ),

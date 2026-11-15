@@ -17,10 +17,12 @@ class RegisterDonorPage extends StatelessWidget {
     final messenger = ScaffoldMessenger.of(context);
     switch (state.status) {
       case RegisterStatus.success:
-        messenger.showSnackBar(const SnackBar(content: Text(AppStrings.registerSuccess)));
+        messenger.showSnackBar(
+            const SnackBar(content: Text(AppStrings.registerSuccess)));
         Navigator.pushNamedAndRemoveUntil(context, Routes.main, (_) => false);
       case RegisterStatus.failure:
-        messenger.showSnackBar(SnackBar(content: Text(state.errorMessage ?? '')));
+        messenger
+            .showSnackBar(SnackBar(content: Text(state.errorMessage ?? '')));
       default:
         break;
     }
@@ -35,10 +37,12 @@ class RegisterDonorPage extends StatelessWidget {
         backgroundColor: AppColors.scaffold,
         appBar: AppBar(
           toolbarHeight: 72,
-          title: Text(AppStrings.createDonorAccount, style: AppTextStyles.appBarTitle),
+          title: Text(AppStrings.createDonorAccount,
+              style: AppTextStyles.appBarTitle),
           leading: IconButton(
             onPressed: () => Navigator.maybePop(context),
-            icon: const Icon(Icons.arrow_back_ios_new_rounded, color: AppColors.black),
+            icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                color: AppColors.black),
           ),
         ),
         body: SafeArea(
@@ -52,8 +56,8 @@ class RegisterDonorPage extends StatelessWidget {
                 const RegisterForm(),
                 const SizedBox(height: 16),
                 LoginPrompt(
-                  onLoginTap: () => ScaffoldMessenger.of(context)
-                      .showSnackBar(const SnackBar(content: Text(AppStrings.comingSoon))),
+                  onLoginTap: () => ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text(AppStrings.comingSoon))),
                 ),
               ],
             ),

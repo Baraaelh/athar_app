@@ -19,13 +19,16 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> loadHome() async {
     emit(state.copyWith(status: HomeStatus.loading));
 
-    final (categories, sponsorships) = await (getCategories(), getSponsorships()).wait;
+    final (categories, sponsorships) =
+        await (getCategories(), getSponsorships()).wait;
 
     if (categories case Error(:final failure)) {
-      return emit(state.copyWith(status: HomeStatus.failure, errorMessage: failure.message));
+      return emit(state.copyWith(
+          status: HomeStatus.failure, errorMessage: failure.message));
     }
     if (sponsorships case Error(:final failure)) {
-      return emit(state.copyWith(status: HomeStatus.failure, errorMessage: failure.message));
+      return emit(state.copyWith(
+          status: HomeStatus.failure, errorMessage: failure.message));
     }
 
     emit(state.copyWith(

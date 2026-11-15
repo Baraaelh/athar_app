@@ -17,7 +17,9 @@ abstract final class Validators {
   static String? phone(String? value) {
     final error = required(value);
     if (error != null) return error;
-    return _phone.hasMatch(value!.replaceAll(' ', '')) ? null : AppStrings.invalidPhone;
+    return _phone.hasMatch(value!.replaceAll(' ', ''))
+        ? null
+        : AppStrings.invalidPhone;
   }
 
   static String? password(String? value) {

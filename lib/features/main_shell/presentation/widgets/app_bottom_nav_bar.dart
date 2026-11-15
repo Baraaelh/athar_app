@@ -12,16 +12,20 @@ class _NavItem {
 }
 
 class AppBottomNavBar extends StatelessWidget {
-  const AppBottomNavBar({super.key, required this.currentIndex, required this.onTap});
+  const AppBottomNavBar(
+      {super.key, required this.currentIndex, required this.onTap});
 
   final int currentIndex;
   final ValueChanged<int> onTap;
 
   static const _items = [
     _NavItem(AppStrings.navHome, Icons.home_outlined, Icons.home_rounded),
-    _NavItem(AppStrings.navSponsorships, Icons.favorite_border_rounded, Icons.favorite_rounded),
-    _NavItem(AppStrings.navCampaigns, Icons.campaign_outlined, Icons.campaign_rounded),
-    _NavItem(AppStrings.navProfile, Icons.person_outline_rounded, Icons.person_rounded),
+    _NavItem(AppStrings.navSponsorships, Icons.favorite_border_rounded,
+        Icons.favorite_rounded),
+    _NavItem(AppStrings.navCampaigns, Icons.campaign_outlined,
+        Icons.campaign_rounded),
+    _NavItem(AppStrings.navProfile, Icons.person_outline_rounded,
+        Icons.person_rounded),
   ];
 
   @override
@@ -29,9 +33,8 @@ class AppBottomNavBar extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: AppColors.white,
-        boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 12, offset: const Offset(0, -2)),
-        ],
+        border:
+            const Border(top: BorderSide(color: AppColors.border, width: 0.5)),
       ),
       child: SafeArea(
         top: false,
@@ -56,7 +59,8 @@ class AppBottomNavBar extends StatelessWidget {
 }
 
 class _NavButton extends StatelessWidget {
-  const _NavButton({required this.item, required this.isActive, required this.onTap});
+  const _NavButton(
+      {required this.item, required this.isActive, required this.onTap});
 
   final _NavItem item;
   final bool isActive;
@@ -64,7 +68,7 @@ class _NavButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isActive ? AppColors.primary : AppColors.textHint;
+    final color = isActive ? AppColors.primary : AppColors.navInactive;
     return InkWell(
       onTap: onTap,
       child: Column(
@@ -74,7 +78,10 @@ class _NavButton extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             item.label,
-            style: AppTextStyles.small.copyWith(color: color, fontWeight: FontWeight.w700),
+            style: AppTextStyles.small.copyWith(
+              color: color,
+              fontWeight: isActive ? FontWeight.w700 : FontWeight.w500,
+            ),
           ),
         ],
       ),

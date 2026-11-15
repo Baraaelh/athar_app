@@ -42,5 +42,6 @@ class HomeState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, categories, sponsorships, query, errorMessage];
+  List<Object?> get props =>
+      [status, categories, sponsorships, query, errorMessage];
 }

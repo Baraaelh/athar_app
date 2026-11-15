@@ -30,7 +30,8 @@ Future<void> initDependencies() async {
     ..registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(sl()))
     ..registerLazySingleton(() => GetCategoriesUseCase(sl()))
     ..registerLazySingleton(() => GetSponsorshipsUseCase(sl()))
-    ..registerFactory(() => HomeCubit(getCategories: sl(), getSponsorships: sl()));
+    ..registerFactory(
+        () => HomeCubit(getCategories: sl(), getSponsorships: sl()));
 
   // ---------- Shell ----------
   sl.registerFactory(MainShellCubit.new);

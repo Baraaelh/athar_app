@@ -14,7 +14,8 @@ class SponsorshipModel extends SponsorshipEntity {
     required super.isSponsored,
   });
 
-  factory SponsorshipModel.fromJson(Map<String, dynamic> json) => SponsorshipModel(
+  factory SponsorshipModel.fromJson(Map<String, dynamic> json) =>
+      SponsorshipModel(
         id: json['id'] as String,
         title: json['title'] as String,
         description: json['description'] as String,

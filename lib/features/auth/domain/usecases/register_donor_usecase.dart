@@ -8,5 +8,6 @@ class RegisterDonorUseCase {
 
   final AuthRepository _repository;
 
-  Future<Result<UserEntity>> call(RegisterParams params) => _repository.registerDonor(params);
+  Future<Result<UserEntity>> call(RegisterParams params) =>
+      _repository.registerDonor(params);
 }

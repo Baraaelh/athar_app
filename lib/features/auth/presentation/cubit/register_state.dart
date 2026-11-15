@@ -26,10 +26,12 @@ class RegisterState extends Equatable {
       RegisterState(
         status: status ?? this.status,
         isPasswordHidden: isPasswordHidden ?? this.isPasswordHidden,
-        isConfirmPasswordHidden: isConfirmPasswordHidden ?? this.isConfirmPasswordHidden,
+        isConfirmPasswordHidden:
+            isConfirmPasswordHidden ?? this.isConfirmPasswordHidden,
         errorMessage: errorMessage,
       );
 
   @override
-  List<Object?> get props => [status, isPasswordHidden, isConfirmPasswordHidden, errorMessage];
+  List<Object?> get props =>
+      [status, isPasswordHidden, isConfirmPasswordHidden, errorMessage];
 }

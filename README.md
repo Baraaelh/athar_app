@@ -31,6 +31,20 @@ lib/
 - **Data** تطبق عقود الـ Domain (حالياً بيانات وهمية – استبدل `datasources` بـ API حقيقي فقط).
 - **Presentation** تتواصل مع الـ Domain عبر الـ UseCases داخل الـ Cubits.
 
+## إدارة الحالة (Cubit)
+
+| Cubit | الملف | الحالة |
+|---|---|---|
+| `RegisterCubit` | `features/auth/presentation/cubit/register_cubit.dart` | حالة الإرسال (loading/success/failure) + إظهار/إخفاء كلمتي المرور |
+| `HomeCubit` | `features/home/presentation/cubit/home_cubit.dart` | تحميل الفئات والكفالات + فلترة البحث |
+| `MainShellCubit` | `features/main_shell/presentation/cubit/main_shell_cubit.dart` | التبويب المختار في الشريط السفلي |
+
+تُنشأ الـ Cubits في `core/routing/app_router.dart` عبر `BlocProvider` من الـ service locator،
+والواجهات تقرأ الحالة بـ `BlocBuilder` / `BlocListener` وتستدعي الدوال بـ `context.read<...>()`.
+
+## الخط
+خط **Alexandria** مضمّن داخل `assets/fonts` (ترخيص OFL)، لا يحتاج إنترنت.
+
 ## الصور والأيقونات
 كل المسارات معرّفة في `lib/core/constants/app_assets.dart`:
 
@@ -47,4 +61,11 @@ lib/
 ```bash
 flutter pub get
 flutter run
+```
+
+## الاختبارات
+`test/responsive_layout_test.dart` يفتح كل شاشة على عدة مقاسات (320×568 حتى 800×1280)
+ومع تكبير خط 1.3x، ويفشل إذا حصل أي overflow:
+```bash
+flutter test
 ```

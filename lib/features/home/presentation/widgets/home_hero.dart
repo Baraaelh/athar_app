@@ -17,7 +17,8 @@ class HomeHero extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.heroTitle, style: AppTextStyles.title.copyWith(fontSize: 22)),
+              Text(AppStrings.heroTitle,
+                  style: AppTextStyles.title.copyWith(fontSize: 22)),
               const SizedBox(height: 14),
               Text(AppStrings.heroSubtitle, style: AppTextStyles.body),
             ],
@@ -26,7 +27,8 @@ class HomeHero extends StatelessWidget {
         Container(
           width: 76,
           height: 76,
-          decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.primaryLight),
+          decoration: const BoxDecoration(
+              shape: BoxShape.circle, color: AppColors.primaryLight),
           padding: const EdgeInsets.all(14),
           child: const AppImage(
             AppAssets.sprout,

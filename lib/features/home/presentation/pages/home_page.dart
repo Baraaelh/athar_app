@@ -24,7 +24,9 @@ class HomePage extends StatelessWidget {
       builder: (context, state) {
         return CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(child: HomeHeader(onNotificationsTap: () => _comingSoon(context))),
+            SliverToBoxAdapter(
+                child:
+                    HomeHeader(onNotificationsTap: () => _comingSoon(context))),
             SliverToBoxAdapter(
               child: Container(
                 color: AppColors.white,
@@ -33,7 +35,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     const HomeHero(),
                     const SizedBox(height: 22),
-                    HomeSearchField(onChanged: context.read<HomeCubit>().search),
+                    HomeSearchField(
+                        onChanged: context.read<HomeCubit>().search),
                   ],
                 ),
               ),
@@ -50,7 +53,8 @@ class HomePage extends StatelessWidget {
       HomeStatus.loading => const [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Center(child: CircularProgressIndicator(color: AppColors.primary)),
+            child: Center(
+                child: CircularProgressIndicator(color: AppColors.primary)),
           ),
         ],
       HomeStatus.failure => [

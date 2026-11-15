@@ -21,9 +21,12 @@ class SectionHeader extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           child: Row(
             children: [
-              Text(AppStrings.viewAll, style: AppTextStyles.link.copyWith(fontWeight: FontWeight.w500)),
+              Text(AppStrings.viewAll,
+                  style:
+                      AppTextStyles.link.copyWith(fontWeight: FontWeight.w500)),
               const SizedBox(width: 4),
-              const Icon(Icons.arrow_forward_ios_rounded, size: 16, color: AppColors.primary),
+              const Icon(Icons.arrow_forward_ios_rounded,
+                  size: 16, color: AppColors.primary),
             ],
           ),
         ),

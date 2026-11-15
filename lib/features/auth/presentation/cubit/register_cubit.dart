@@ -14,8 +14,8 @@ class RegisterCubit extends Cubit<RegisterState> {
   void togglePasswordVisibility() =>
       emit(state.copyWith(isPasswordHidden: !state.isPasswordHidden));
 
-  void toggleConfirmPasswordVisibility() =>
-      emit(state.copyWith(isConfirmPasswordHidden: !state.isConfirmPasswordHidden));
+  void toggleConfirmPasswordVisibility() => emit(
+      state.copyWith(isConfirmPasswordHidden: !state.isConfirmPasswordHidden));
 
   Future<void> register(RegisterParams params) async {
     if (state.isLoading) return;
@@ -25,7 +25,8 @@ class RegisterCubit extends Cubit<RegisterState> {
 
     result.when(
       success: (_) => emit(state.copyWith(status: RegisterStatus.success)),
-      failure: (f) => emit(state.copyWith(status: RegisterStatus.failure, errorMessage: f.message)),
+      failure: (f) => emit(state.copyWith(
+          status: RegisterStatus.failure, errorMessage: f.message)),
     );
   }
 }

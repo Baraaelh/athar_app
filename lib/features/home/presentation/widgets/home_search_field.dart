@@ -23,15 +23,17 @@ class HomeSearchField extends StatelessWidget {
         hintText: AppStrings.searchHint,
         hintStyle: AppTextStyles.body,
         filled: true,
-        fillColor: AppColors.headerBackground,
+        fillColor: AppColors.searchFill,
         contentPadding: const EdgeInsets.symmetric(vertical: 20),
         prefixIcon: const Padding(
           padding: EdgeInsetsDirectional.only(start: 12, end: 4),
-          child: Icon(Icons.search_rounded, size: 32, color: AppColors.textSecondary),
+          child: Icon(Icons.search_rounded,
+              size: 32, color: AppColors.textSecondary),
         ),
         border: border,
         enabledBorder: border,
-        focusedBorder: border.copyWith(borderSide: const BorderSide(color: AppColors.primary)),
+        focusedBorder: border.copyWith(
+            borderSide: const BorderSide(color: AppColors.primary)),
       ),
     );
   }
